@@ -1,98 +1,147 @@
-import { Image } from 'expo-image';
-import { Platform, StyleSheet } from 'react-native';
-
-import { HelloWave } from '@/components/hello-wave';
-import ParallaxScrollView from '@/components/parallax-scroll-view';
+import RoomItem, { ItemData } from '@/components/item';
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
-import { Link } from 'expo-router';
+import { useEffect, useState } from 'react';
+import { Button, FlatList, StyleSheet, useColorScheme } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
+
+const useFetchData = (): Promise<ItemData[]> => {
+  const data =
+    [
+      {
+        name: "Cozy Downtown Loft",
+        price: 120,
+        imgUrl: "https://images.unsplash.com/photo-1506744038136-46273834b3fb"
+      },
+      {
+        name: "Modern Beachfront Apartment",
+        price: 150,
+        imgUrl: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308"
+      },
+      {
+        name: "Rustic Mountain Cabin",
+        price: 200,
+        imgUrl: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267"
+      },
+      {
+        name: "Luxury City Penthouse",
+        price: 175,
+        imgUrl: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca"
+      },
+      {
+        name: "Charming Countryside Retreat",
+        price: 90,
+        imgUrl: "https://images.unsplash.com/photo-1505691723518-41cb85eea23e"
+      },
+      {
+        name: "Cozy Downtown Loft",
+        price: 120,
+        imgUrl: "https://images.unsplash.com/photo-1506744038136-46273834b3fb"
+      },
+      {
+        name: "Modern Beachfront Apartment",
+        price: 150,
+        imgUrl: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308"
+      },
+      {
+        name: "Rustic Mountain Cabin",
+        price: 200,
+        imgUrl: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267"
+      },
+      {
+        name: "Luxury City Penthouse",
+        price: 175,
+        imgUrl: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca"
+      },
+      {
+        name: "Charming Countryside Retreat",
+        price: 90,
+        imgUrl: "https://images.unsplash.com/photo-1505691723518-41cb85eea23e"
+      },
+      {
+        name: "Cozy Downtown Loft",
+        price: 120,
+        imgUrl: "https://images.unsplash.com/photo-1506744038136-46273834b3fb"
+      },
+      {
+        name: "Modern Beachfront Apartment",
+        price: 150,
+        imgUrl: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308"
+      },
+      {
+        name: "Rustic Mountain Cabin",
+        price: 200,
+        imgUrl: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267"
+      },
+      {
+        name: "Luxury City Penthouse",
+        price: 175,
+        imgUrl: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca"
+      },
+      {
+        name: "Charming Countryside Retreat",
+        price: 90,
+        imgUrl: "https://images.unsplash.com/photo-1505691723518-41cb85eea23e"
+      }
+
+    ]
+  return new Promise<ItemData[]>((resolve) => {
+    setTimeout(() => {
+      const shuffled = [...data].sort(() => Math.random() - 0.5)
+      const slice = shuffled.slice(0, 5)
+      resolve(slice)
+    }, 1000)
+  })
+}
 export default function HomeScreen() {
-  return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
-      headerImage={
-        <Image
-          source={require('@/assets/images/partial-react-logo.png')}
-          style={styles.reactLogo}
-        />
-      }>
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Welcome!</ThemedText>
-        <HelloWave />
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 1: Try it</ThemedText>
-        <ThemedText>
-          Edit <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> to see changes.
-          Press{' '}
-          <ThemedText type="defaultSemiBold">
-            {Platform.select({
-              ios: 'cmd + d',
-              android: 'cmd + m',
-              web: 'F12',
-            })}
-          </ThemedText>{' '}
-          to open developer tools.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <Link href="/modal">
-          <Link.Trigger>
-            <ThemedText type="subtitle">Step 2: Explore</ThemedText>
-          </Link.Trigger>
-          <Link.Preview />
-          <Link.Menu>
-            <Link.MenuAction title="Action" icon="cube" onPress={() => alert('Action pressed')} />
-            <Link.MenuAction
-              title="Share"
-              icon="square.and.arrow.up"
-              onPress={() => alert('Share pressed')}
-            />
-            <Link.Menu title="More" icon="ellipsis">
-              <Link.MenuAction
-                title="Delete"
-                icon="trash"
-                destructive
-                onPress={() => alert('Delete pressed')}
-              />
-            </Link.Menu>
-          </Link.Menu>
-        </Link>
+  const fetchData = useFetchData()
+  const [loading, setLoading] = useState(true)
+  const [data, setData] = useState<ItemData[]>([])
 
-        <ThemedText>
-          {`Tap the Explore tab to learn more about what's included in this starter app.`}
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 3: Get a fresh start</ThemedText>
-        <ThemedText>
-          {`When you're ready, run `}
-          <ThemedText type="defaultSemiBold">npm run reset-project</ThemedText> to get a fresh{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> directory. This will move the current{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> to{' '}
-          <ThemedText type="defaultSemiBold">app-example</ThemedText>.
-        </ThemedText>
-      </ThemedView>
-    </ParallaxScrollView>
-  );
+  const fetch = async () => {
+    setLoading(true)
+    const data = await fetchData
+    setData(data)
+    setLoading(false)
+  }
+  const handleRefresh = () => {
+    console.log('You tapped the button!');
+    fetch()
+  }
+
+  useEffect(() => {
+    fetch()
+  }, [])
+  const colorScheme = useColorScheme()
+  return (
+
+      <ThemedView style={style.themStyle}>
+        <SafeAreaView>
+          <Button
+            onPress={handleRefresh}
+            title="Refresh"
+            color="#841584"
+            disabled={loading}
+            accessibilityLabel="Learn more about this purple button"
+          />
+
+          {loading && <ThemedView>
+            <ThemedText>
+              Loading...
+            </ThemedText>
+          </ThemedView>
+          }
+          <FlatList data={data} renderItem={(r) => (<RoomItem  {...r.item} />)}>
+          </FlatList>
+        </SafeAreaView>
+      </ThemedView >
+  )
 }
 
-const styles = StyleSheet.create({
-  titleContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 8,
-  },
-  stepContainer: {
-    gap: 8,
-    marginBottom: 8,
-  },
-  reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
-    left: 0,
-    position: 'absolute',
-  },
-});
+
+const style = StyleSheet.create({
+  themStyle: {
+    flex: 1
+  }
+})
