@@ -1,8 +1,10 @@
 import { createContext, useContext } from "react"
 
 export type UserProfile = {
+    id:string
     firstName?: string
     lastName?: string
+    phoneNumber?: number
     email?: string
     avatarUrl?: string
 }
