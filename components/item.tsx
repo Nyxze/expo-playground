@@ -1,15 +1,12 @@
-import { Button, Image, StyleSheet } from 'react-native';
+import { RoomInfos } from '@/hooks/use-rooms';
+import { Link } from 'expo-router';
+import { Image, StyleSheet } from 'react-native';
 import { ThemedText } from './themed-text';
 import { ThemedView } from './themed-view';
 
-export type ItemData = {
-    name: string
-    price: number
-    imgUrl?: string
-    onImgClick?: () => void
-}
 
-export default function RoomItem(data: ItemData) {
+export default function RoomItem(data: RoomInfos) {
+
     const currency = '$'
     return (
         <ThemedView style={styles.container}>
@@ -21,16 +18,15 @@ export default function RoomItem(data: ItemData) {
                     {data.price}{currency}
                 </ThemedText>
             </ThemedView>
-          <Button
-            onPress={data.onImgClick}
-            title="Book"
-            color="#841584"
-            accessibilityLabel="Learn more about this purple button"
-          />
-            <Image
-                source={{ uri: data.imgUrl }}
-                style={{ width: 80, height: 80, borderRadius: 8 }}
-            />
+            <Link href={{
+                pathname: '/explorer/[id]',
+                params: { id: data.id}
+            }}>
+                <Image
+                    source={{ uri: data.imgUrl }}
+                    style={{ width: 80, height: 80, borderRadius: 8 }}
+                />
+            </Link>
         </ThemedView>
     )
 }

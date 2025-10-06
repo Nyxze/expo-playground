@@ -1,0 +1,167 @@
+[
+    {
+        "id": "1",
+        "name": "Cozy Downtown Loft",
+        "price": 120,
+        "imgUrl": "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
+        "description": "A cozy loft in the heart of downtown, perfect for solo travelers or couples.",
+        "hostName": "Alice",
+        "guests": 2,
+        "beds": 1,
+        "baths": 1
+    },
+    {
+        "id": "2",
+        "name": "Modern Beachfront Apartment",
+        "price": 150,
+        "imgUrl": "https://images.unsplash.com/photo-1519125323398-675f0ddb6308",
+        "description": "Enjoy stunning ocean views in this modern beachfront apartment.",
+        "hostName": "Bob",
+        "guests": 4,
+        "beds": 2,
+        "baths": 2
+    },
+    {
+        "id": "3",
+        "name": "Rustic Mountain Cabin",
+        "price": 200,
+        "imgUrl": "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267",
+        "description": "Escape to nature in this rustic cabin surrounded by mountains.",
+        "hostName": "Carol",
+        "guests": 6,
+        "beds": 3,
+        "baths": 2
+    },
+    {
+        "id": "4",
+        "name": "Luxury City Penthouse",
+        "price": 175,
+        "imgUrl": "https://images.unsplash.com/photo-1465101046530-73398c7f28ca",
+        "description": "Experience luxury living in this spacious city penthouse.",
+        "hostName": "David",
+        "guests": 5,
+        "beds": 2,
+        "baths": 2
+    },
+    {
+        "id": "5",
+        "name": "Charming Countryside Retreat",
+        "price": 90,
+        "imgUrl": "https://images.unsplash.com/photo-1505691723518-41cb85eea23e",
+        "description": "Relax in this charming retreat surrounded by countryside views.",
+        "hostName": "Eve",
+        "guests": 3,
+        "beds": 2,
+        "baths": 1
+    },
+    {
+        "id": "6",
+        "name": "Cozy Downtown Loft",
+        "price": 120,
+        "imgUrl": "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
+        "description": "A cozy loft in the heart of downtown, perfect for solo travelers or couples.",
+        "hostName": "Alice",
+        "guests": 2,
+        "beds": 1,
+        "baths": 1
+    },
+    {
+        "id": "7",
+        "name": "Modern Beachfront Apartment",
+        "price": 150,
+        "imgUrl": "https://images.unsplash.com/photo-1519125323398-675f0ddb6308",
+        "description": "Enjoy stunning ocean views in this modern beachfront apartment.",
+        "hostName": "Bob",
+        "guests": 4,
+        "beds": 2,
+        "baths": 2
+    },
+    {
+        "id": "8",
+        "name": "Rustic Mountain Cabin",
+        "price": 200,
+        "imgUrl": "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267",
+        "description": "Escape to nature in this rustic cabin surrounded by mountains.",
+        "hostName": "Carol",
+        "guests": 6,
+        "beds": 3,
+        "baths": 2
+    },
+    {
+        "id": "9",
+        "name": "Luxury City Penthouse",
+        "price": 175,
+        "imgUrl": "https://images.unsplash.com/photo-1465101046530-73398c7f28ca",
+        "description": "Experience luxury living in this spacious city penthouse.",
+        "hostName": "David",
+        "guests": 5,
+        "beds": 2,
+        "baths": 2
+    },
+    {
+        "id": "10",
+        "name": "Charming Countryside Retreat",
+        "price": 90,
+        "imgUrl": "https://images.unsplash.com/photo-1505691723518-41cb85eea23e",
+        "description": "Relax in this charming retreat surrounded by countryside views.",
+        "hostName": "Eve",
+        "guests": 3,
+        "beds": 2,
+        "baths": 1
+    },
+    {
+        "id": "11",
+        "name": "Cozy Downtown Loft",
+        "price": 120,
+        "imgUrl": "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
+        "description": "A cozy loft in the heart of downtown, perfect for solo travelers or couples.",
+        "hostName": "Alice",
+        "guests": 2,
+        "beds": 1,
+        "baths": 1
+    },
+    {
+        "id": "12",
+        "name": "Modern Beachfront Apartment",
+        "price": 150,
+        "imgUrl": "https://images.unsplash.com/photo-1519125323398-675f0ddb6308",
+        "description": "Enjoy stunning ocean views in this modern beachfront apartment.",
+        "hostName": "Bob",
+        "guests": 4,
+        "beds": 2,
+        "baths": 2
+    },
+    {
+        "id": "13",
+        "name": "Rustic Mountain Cabin",
+        "price": 200,
+        "imgUrl": "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267",
+        "description": "Escape to nature in this rustic cabin surrounded by mountains.",
+        "hostName": "Carol",
+        "guests": 6,
+        "beds": 3,
+        "baths": 2
+    },
+    {
+        "id": "14",
+        "name": "Luxury City Penthouse",
+        "price": 175,
+        "imgUrl": "https://images.unsplash.com/photo-1465101046530-73398c7f28ca",
+        "description": "Experience luxury living in this spacious city penthouse.",
+        "hostName": "David",
+        "guests": 5,
+        "beds": 2,
+        "baths": 2
+    },
+    {
+        "id": "15",
+        "name": "Charming Countryside Retreat",
+        "price": 90,
+        "imgUrl": "https://images.unsplash.com/photo-1505691723518-41cb85eea23e",
+        "description": "Relax in this charming retreat surrounded by countryside views.",
+        "hostName": "Eve",
+        "guests": 3,
+        "beds": 2,
+        "baths": 1
+    }
+]
