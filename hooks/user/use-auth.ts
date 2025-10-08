@@ -1,24 +1,16 @@
-import { createContext, useContext } from "react"
+import { AuthContext } from "@/providers/auth"
+import { useContext } from "react"
 
 export type UserProfile = {
-    id:string
+    id: string
     firstName?: string
     lastName?: string
     phoneNumber?: number
     email?: string
     avatarUrl?: string
+    bookedRooms?: string[]
+    favorites?: string[]
 }
 
-export const AuthContext = createContext<{
-    user: UserProfile;
-    setUser: (user: UserProfile) => void
-}>({
-    user: null,
-    setUser: () => { }
-})
 
-export const useAuth = () => {
-    const ctx = useContext(AuthContext)
-    console.log("AuthContext:", ctx)
-    return ctx
-}
+export const useAuth = () => useContext(AuthContext)

@@ -15,15 +15,14 @@ export default function Layout() {
                 tabBarButton: HapticTab,
             }}>
             <Tabs.Screen
-                name="explorer"
+                name="(explorer)"
                 options={{
                     title: 'Explorer',
                     tabBarIcon: ({ color }) => <FontAwesome size={28} name="user" color={color} />,
                 }}
             />
-
             <Tabs.Screen
-                name="profile"
+                name="(profile)"
                 options={{
                     title: 'Profile',
                     tabBarIcon: ({ color }) => <IconSymbol size={28} name='house.fill' color={color} />,

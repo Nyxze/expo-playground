@@ -1,7 +1,6 @@
-import { TimeContext } from "@/providers/time";
+import { TimeContext, TimeProvider } from "@/providers/time";
 import { useContext } from "react";
 
-export function getTime(): Date {
-  const timeProvider = useContext(TimeContext);
-  return timeProvider.now();
+export function useClock(): TimeProvider {
+  return useContext(TimeContext);
 }

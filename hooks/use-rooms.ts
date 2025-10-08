@@ -1,43 +1,28 @@
-import roomData from "./rooms.json"
+
+const URL = "https://gist.githubusercontent.com/Fabsforce/a76097aa83d4f5d1b3c5c9868e2d51d3/raw/25d6501b6a6969268b47b489b32629f2d0eb223d/logements.json"
 export type RoomInfos = {
-    name: string
-    price: number
-    imgUrl?: string
-    id: string
-    description: string
-    hostName: string
-    guests: number
-    beds: number
-    baths: number
+    id: string;
+    title: string;
+    city: string;
+    price: number;
+    image: string;
+    lat: number;
+    lng: number;
+    type: string;
+    description: string;
+    rating: number;
+    reviews: number;
 }
 
 let cachedRooms: RoomInfos[] | null = null;
 
-export function fetchRooms(): Promise<RoomInfos[]> {
-    return new Promise((resolve) => {
-        let delay = 1000
-        if (cachedRooms) {
-            delay = 100
-        } else {
-            cachedRooms = roomData;
-        }
-        setTimeout(() => {
-            resolve(cachedRooms);
-        }, delay);
-    });
+export async function fetchRooms(): Promise<RoomInfos[]> {
+    const response = await fetch(URL);
+    return await response.json();
 }
 
-export function fetchRoomById(id: string): Promise<RoomInfos> {
-    return new Promise((resolve) => {
-        let delay = 1000
-        if (cachedRooms) {
-            delay = 100
-        } else {
-            cachedRooms = roomData;
-        }
-        setTimeout(() => {
-            const room = cachedRooms.find((r) => r.id === id);
-            resolve(room);
-        }, delay);
-    });
+export async function fetchRoomById(id: string): Promise<RoomInfos> {
+    const data = await fetchRooms()
+    return data.find(r => r.id === id);
+
 }
